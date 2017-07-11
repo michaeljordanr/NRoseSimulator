@@ -8,8 +8,11 @@ import android.support.v4.app.ShareCompat;
 import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TableLayout;
+import android.widget.TableRow;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -21,182 +24,56 @@ import java.io.OutputStream;
 public class MainActivity extends Activity {
 
     private SoundManager mSoundManager;
-    private Button bt1;
-    private Button bt2;
-    private Button bt3;
-    private Button bt4;
-    private Button bt5;
-    private Button bt6;
-    private Button bt7;
-    private Button bt8;
-    private Button bt9;
-    private Button bt10;
-    private Button bt11;
-    private Button bt12;
-    private Button bt13;
-    private Button bt14;
-    private Button bt15;
-    private Button bt16;
-    private Button bt17;
+    TableLayout tableLayout;
+
+    public void buttonTapped(View view) {
+
+        int id = view.getId();
+        String ourId = "";
+        ourId = view.getResources().getResourceEntryName(id);
+
+        int resourceId = getResources().getIdentifier(ourId, "raw", "br.com.jordan.negaorosasimulator");
+
+        mSoundManager.play(resourceId);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        bt1 = (Button) findViewById(R.id.bt1);
-        bt2 = (Button) findViewById(R.id.bt2);
-        bt3 = (Button) findViewById(R.id.bt3);
-        bt4 = (Button) findViewById(R.id.bt4);
-        bt5 = (Button) findViewById(R.id.bt5);
-        bt6 = (Button) findViewById(R.id.bt6);
-        bt7 = (Button) findViewById(R.id.bt7);
-        bt8 = (Button) findViewById(R.id.bt8);
-        bt9 = (Button) findViewById(R.id.bt9);
-        bt10 = (Button) findViewById(R.id.bt10);
-        bt11 = (Button) findViewById(R.id.bt11);
-        bt12 = (Button) findViewById(R.id.bt12);
-        bt13 = (Button) findViewById(R.id.bt13);
-        bt14 = (Button) findViewById(R.id.bt14);
-        bt15 = (Button) findViewById(R.id.bt15);
-        bt16 = (Button) findViewById(R.id.bt16);
-        bt17 = (Button) findViewById(R.id.bt17);
+        tableLayout = (TableLayout) findViewById(R.id.tablelayout);
 
-        bt1.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
+        View.OnLongClickListener listener = new View.OnLongClickListener() {
             public boolean onLongClick(View v) {
-                shareAudio(R.raw.boatardesi);
+                int id = v.getId();
+                String ourId = "";
+                ourId = v.getResources().getResourceEntryName(id);
+
+                int resourceId = getResources().getIdentifier(ourId, "raw", "br.com.jordan.negaorosasimulator");
+
+                shareAudio(resourceId);
                 return true;
             }
-        });
+        };
 
-        bt2.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                shareAudio(R.raw.sexoocasional);
-                return true;
-            }
-        });
+        for(int i=0; i < tableLayout.getChildCount(); i++){
+            View v = tableLayout.getChildAt(i);
 
-        bt3.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                shareAudio(R.raw.que);
-                return true;
-            }
-        });
+            if(v instanceof TableRow){
+                TableRow row = (TableRow) v;
 
-        bt4.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                shareAudio(R.raw.atorpornografico);
-                return true;
-            }
-        });
+                for(int j=0; j < row.getChildCount(); j++) {
 
-        bt5.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                shareAudio(R.raw.mumicate);
-                return true;
+                    if(row.getChildAt(j) instanceof Button) {
+                        Button button = (Button) row.getChildAt(j);
+                        Log.i("Teste", button.getResources().getResourceEntryName(button.getId()) + " ");
+                        button.setOnLongClickListener(listener);
+                    }
+                }
             }
-        });
+        }
 
-        bt6.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                shareAudio(R.raw.filmepornografico);
-                return true;
-            }
-        });
-
-        bt7.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                shareAudio(R.raw.revistavcleu);
-                return true;
-            }
-        });
-
-        bt8.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                shareAudio(R.raw.comprarbolinho);
-                return true;
-            }
-        });
-
-        bt9.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                shareAudio(R.raw.coisaqsefaznooutro);
-                return true;
-            }
-        });
-
-        bt10.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                shareAudio(R.raw.danumdaassim);
-                return true;
-            }
-        });
-
-        bt11.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                shareAudio(R.raw.uhauhuha);
-                return true;
-            }
-        });
-
-        bt12.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                shareAudio(R.raw.comosevcjafalou);
-                return true;
-            }
-        });
-
-        bt13.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                shareAudio(R.raw.eusexoeusexo);
-                return true;
-            }
-        });
-
-        bt14.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                shareAudio(R.raw.chegueihoje);
-                return true;
-            }
-        });
-
-        bt15.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                shareAudio(R.raw.eutenhominhamulher);
-                return true;
-            }
-        });
-
-        bt16.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                shareAudio(R.raw.naovaipagarbolingo);
-                return true;
-            }
-        });
-
-        bt17.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                shareAudio(R.raw.tameseguindo);
-                return true;
-            }
-        });
     }
 
     @Override
@@ -206,127 +83,29 @@ public class MainActivity extends Activity {
         int maxSimultaneousStreams = 3;
         mSoundManager = new SoundManager(this, maxSimultaneousStreams);
         mSoundManager.start();
-        mSoundManager.load(R.raw.boatardesi);
-        mSoundManager.load(R.raw.sexoocasional);
-        mSoundManager.load(R.raw.que);
-        mSoundManager.load(R.raw.atorpornografico);
-        mSoundManager.load(R.raw.mumicate);
-        mSoundManager.load(R.raw.filmepornografico);
-        mSoundManager.load(R.raw.revistavcleu);
-        mSoundManager.load(R.raw.comprarbolinho);
-        mSoundManager.load(R.raw.coisaqsefaznooutro);
-        mSoundManager.load(R.raw.danumdaassim);
-        mSoundManager.load(R.raw.uhauhuha);
-        mSoundManager.load(R.raw.comosevcjafalou);
-        mSoundManager.load(R.raw.eusexoeusexo);
-        mSoundManager.load(R.raw.chegueihoje);
-        mSoundManager.load(R.raw.eutenhominhamulher);
-        mSoundManager.load(R.raw.naovaipagarbolingo);
-        mSoundManager.load(R.raw.tameseguindo);
-    }
 
-    public void boatardesi(View view) {
-        if (mSoundManager != null) {
-            mSoundManager.play(R.raw.boatardesi);
+        for(int i=0; i < tableLayout.getChildCount(); i++) {
+            View v = tableLayout.getChildAt(i);
+
+            if(v instanceof TableRow) {
+                TableRow row = (TableRow) v;
+
+                for (int j = 0; j < row.getChildCount(); j++) {
+
+                    if (row.getChildAt(j) instanceof Button) {
+                        Button button = (Button) row.getChildAt(j);
+                        int id = button.getId();
+                        String ourId = "";
+                        ourId = button.getResources().getResourceEntryName(id);
+
+                        int resourceId = getResources().getIdentifier(ourId, "raw", "br.com.jordan.negaorosasimulator");
+                        mSoundManager.load(resourceId);
+                    }
+                }
+            }
         }
-    }
 
-    public void sexoocasional(View view) {
-        if (mSoundManager != null) {
-            mSoundManager.play(R.raw.sexoocasional);
-        }
     }
-
-    public void que(View view) {
-        if (mSoundManager != null) {
-            mSoundManager.play(R.raw.que);
-        }
-    }
-
-    public void atorpornografico(View view) {
-        if (mSoundManager != null) {
-            mSoundManager.play(R.raw.atorpornografico);
-        }
-    }
-
-    public void mumicate(View view) {
-        if (mSoundManager != null) {
-            mSoundManager.play(R.raw.mumicate);
-        }
-    }
-
-    public void filmepornografico(View view) {
-        if (mSoundManager != null) {
-            mSoundManager.play(R.raw.filmepornografico);
-        }
-    }
-
-    public void revistavcleu(View view) {
-        if (mSoundManager != null) {
-            mSoundManager.play(R.raw.revistavcleu);
-        }
-    }
-
-    public void comprarbolinho(View view) {
-        if (mSoundManager != null) {
-            mSoundManager.play(R.raw.comprarbolinho);
-        }
-    }
-
-    public void coisaqsefaznooutro(View view) {
-        if (mSoundManager != null) {
-            mSoundManager.play(R.raw.coisaqsefaznooutro);
-        }
-    }
-
-    public void danumdaassim(View view) {
-        if (mSoundManager != null) {
-            mSoundManager.play(R.raw.danumdaassim);
-        }
-    }
-
-    public void uhauhuha(View view) {
-        if (mSoundManager != null) {
-            mSoundManager.play(R.raw.uhauhuha);
-        }
-    }
-
-    public void comosevcjafalou(View view) {
-        if (mSoundManager != null) {
-            mSoundManager.play(R.raw.comosevcjafalou);
-        }
-    }
-
-    public void eusexoeusexo(View view) {
-        if (mSoundManager != null) {
-            mSoundManager.play(R.raw.eusexoeusexo);
-        }
-    }
-
-    public void chegueihoje(View view) {
-        if (mSoundManager != null) {
-            mSoundManager.play(R.raw.chegueihoje);
-        }
-    }
-
-    public void eutenhominhamulher(View view) {
-        if (mSoundManager != null) {
-            mSoundManager.play(R.raw.eutenhominhamulher);
-        }
-    }
-
-    public void naovaipagarbolingo(View view) {
-        if (mSoundManager != null) {
-            mSoundManager.play(R.raw.naovaipagarbolingo);
-        }
-    }
-
-    public void tameseguindo(View view) {
-        if (mSoundManager != null) {
-            mSoundManager.play(R.raw.tameseguindo);
-        }
-    }
-
 
     @Override
     protected void onPause() {

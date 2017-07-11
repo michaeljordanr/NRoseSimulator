@@ -13,47 +13,48 @@
             android:layout_width="fill_parent"
             android:layout_height="match_parent"
             android:stretchColumns="*"
+            android:id="@+id/tablelayout"
             >
             <TableRow
                 android:layout_weight="1"
                 android:gravity="center">
-                <Button android:id="@+id/bt1" android:layout_width="118dp" android:layout_height="118dp" android:onClick="boatardesi" android:background="@drawable/boatarde" android:layout_margin="2dp"/>
-                <Button android:id="@+id/bt2" android:layout_width="118dp" android:layout_height="118dp" android:onClick="sexoocasional" android:background="@drawable/sexoocasional" android:layout_margin="2dp"/>
-                <Button android:id="@+id/bt3" android:layout_width="118dp" android:layout_height="118dp" android:onClick="que" android:background="@drawable/que" android:layout_margin="2dp"/>
+                <Button android:id="@+id/boatardesi" android:layout_width="118dp" android:layout_height="118dp" android:onClick="buttonTapped" android:background="@drawable/boatarde" android:layout_margin="2dp"/>
+                <Button android:id="@+id/sexoocasional" android:layout_width="118dp" android:layout_height="118dp" android:onClick="buttonTapped" android:background="@drawable/sexoocasional" android:layout_margin="2dp"/>
+                <Button android:id="@+id/que" android:layout_width="118dp" android:layout_height="118dp" android:onClick="buttonTapped" android:background="@drawable/que" android:layout_margin="2dp"/>
             </TableRow>
             <TableRow
                 android:layout_weight="1"
                 android:gravity="center">
-                <Button android:id="@+id/bt4" android:layout_width="118dp" android:layout_height="118dp" android:onClick="atorpornografico" android:background="@drawable/atorpornografico" android:layout_margin="2dp"/>
-                <Button android:id="@+id/bt5" android:layout_width="118dp" android:layout_height="118dp" android:onClick="mumicate" android:background="@drawable/mumicate" android:layout_margin="2dp"/>
-                <Button android:id="@+id/bt6" android:layout_width="118dp" android:layout_height="118dp" android:onClick="filmepornografico" android:layout_margin="2dp" android:background="@drawable/atorpornografico"/>
+                <Button android:id="@+id/atorpornografico" android:layout_width="118dp" android:layout_height="118dp" android:onClick="buttonTapped" android:background="@drawable/atorpornografico" android:layout_margin="2dp"/>
+                <Button android:id="@+id/mumicate" android:layout_width="118dp" android:layout_height="118dp" android:onClick="buttonTapped" android:background="@drawable/mumicate" android:layout_margin="2dp"/>
+                <Button android:id="@+id/filmepornografico" android:layout_width="118dp" android:layout_height="118dp" android:onClick="buttonTapped" android:layout_margin="2dp" android:background="@drawable/atorpornografico"/>
             </TableRow>
             <TableRow
                 android:layout_weight="1"
                 android:gravity="center">
-                <Button android:id="@+id/bt7" android:layout_width="118dp" android:layout_height="118dp" android:onClick="revistavcleu" android:background="@drawable/revista" android:layout_margin="2dp"/>
-                <Button android:id="@+id/bt8" android:layout_width="118dp" android:layout_height="118dp" android:onClick="comprarbolinho" android:background="@drawable/naovaipagar" android:layout_margin="2dp"/>
-                <Button android:id="@+id/bt9" android:layout_width="118dp" android:layout_height="118dp" android:onClick="coisaqsefaznooutro" android:background="@drawable/coisaqfaznooutro" android:layout_margin="2dp"/>
+                <Button android:id="@+id/revistavcleu" android:layout_width="118dp" android:layout_height="118dp" android:onClick="buttonTapped" android:background="@drawable/revista" android:layout_margin="2dp"/>
+                <Button android:id="@+id/comprarbolinho" android:layout_width="118dp" android:layout_height="118dp" android:onClick="buttonTapped" android:background="@drawable/naovaipagar" android:layout_margin="2dp"/>
+                <Button android:id="@+id/coisaqsefaznooutro" android:layout_width="118dp" android:layout_height="118dp" android:onClick="buttonTapped" android:background="@drawable/coisaqfaznooutro" android:layout_margin="2dp"/>
             </TableRow>
             <TableRow
                 android:layout_weight="1"
                 android:gravity="center">
-                <Button android:id="@+id/bt10" android:layout_width="118dp" android:layout_height="118dp" android:onClick="danumdaassim" android:background="@drawable/danumdaassim" android:layout_margin="2dp"/>
-                <Button android:id="@+id/bt11" android:layout_width="118dp" android:layout_height="118dp" android:onClick="uhauhuha" android:background="@drawable/uahuahua" android:layout_margin="2dp"/>
-                <Button android:id="@+id/bt12" android:layout_width="118dp" android:layout_height="118dp" android:onClick="comosevcjafalou" android:background="@drawable/comosevcjafalou" android:layout_margin="2dp"/>
+                <Button android:id="@+id/danumdaassim" android:layout_width="118dp" android:layout_height="118dp" android:onClick="buttonTapped" android:background="@drawable/danumdaassim" android:layout_margin="2dp"/>
+                <Button android:id="@+id/uhauhuha" android:layout_width="118dp" android:layout_height="118dp" android:onClick="buttonTapped" android:background="@drawable/uahuahua" android:layout_margin="2dp"/>
+                <Button android:id="@+id/comosevcjafalou" android:layout_width="118dp" android:layout_height="118dp" android:onClick="buttonTapped" android:background="@drawable/comosevcjafalou" android:layout_margin="2dp"/>
             </TableRow>
             <TableRow
                 android:layout_weight="1"
                 android:gravity="center">
-                <Button android:id="@+id/bt13" android:layout_width="118dp" android:layout_height="118dp" android:onClick="eusexoeusexo" android:background="@drawable/eusexoeusexo" android:layout_margin="2dp"/>
-                <Button android:id="@+id/bt14" android:layout_width="118dp" android:layout_height="118dp" android:onClick="chegueihoje" android:background="@drawable/eunaofiznada" android:layout_margin="2dp"/>
-                <Button android:id="@+id/bt15" android:layout_width="118dp" android:layout_height="118dp" android:onClick="eutenhominhamulher" android:background="@drawable/minhamulher" android:layout_margin="2dp"/>
+                <Button android:id="@+id/eusexoeusexo" android:layout_width="118dp" android:layout_height="118dp" android:onClick="buttonTapped" android:background="@drawable/eusexoeusexo" android:layout_margin="2dp"/>
+                <Button android:id="@+id/chegueihoje" android:layout_width="118dp" android:layout_height="118dp" android:onClick="buttonTapped" android:background="@drawable/eunaofiznada" android:layout_margin="2dp"/>
+                <Button android:id="@+id/eutenhominhamulher" android:layout_width="118dp" android:layout_height="118dp" android:onClick="buttonTapped" android:background="@drawable/minhamulher" android:layout_margin="2dp"/>
             </TableRow>
             <TableRow
                 android:layout_weight="1"
                 android:gravity="center">
-                <Button android:id="@+id/bt16" android:layout_width="118dp" android:layout_height="118dp" android:onClick="naovaipagarbolingo" android:background="@drawable/naovaipagar" android:layout_margin="2dp"/>
-                <Button android:id="@+id/bt17" android:layout_width="118dp" android:layout_height="118dp" android:onClick="tameseguindo" android:background="@drawable/tameseguindo" android:layout_margin="2dp"/>
+                <Button android:id="@+id/naovaipagarbolingo" android:layout_width="118dp" android:layout_height="118dp" android:onClick="buttonTapped" android:background="@drawable/naovaipagar" android:layout_margin="2dp"/>
+                <Button android:id="@+id/tameseguindo" android:layout_width="118dp" android:layout_height="118dp" android:onClick="buttonTapped" android:background="@drawable/tameseguindo" android:layout_margin="2dp"/>
             </TableRow>
         </TableLayout>        
     </ScrollView>
